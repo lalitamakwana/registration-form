@@ -21,7 +21,7 @@
 <p class="subtitle">
     Create your account to continue.
 </p>
-        <form>
+        <form id="registrationForm">
             
             <!-- 1.Full name -->
 
@@ -92,5 +92,22 @@
 
         </form>
         </div>
+
+        <!-- Success Popup -->
+<div id="successPopup" class="popup">
+    <div class="popup-content">
+        <div class="check-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h2>Registration Successful!</h2>
+
+        <p>Your registration has been completed successfully.</p>
+
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
     </body>
     </html>

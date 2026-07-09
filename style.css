@@ -1,12 +1,42 @@
 body{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #5f2c82, #49a09d);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#5f2c82,#49a09d);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    padding:40px 0;
+    overflow-y:auto;
+    position: relative;
+}
+
+.circle{
+    position:absolute;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius:50%;
+}
+
+.one{
+    width:90px;
+    height:90px;
+    left:8%;
+    top:15%;
+}
+
+.two{
+    width:30px;
+    height:30px;
+    right:18%;
+    top:12%;
+}
+
+.three{
+    width:18px;
+    height:18px;
+    left:20%;
+    bottom:18%;
 }
 
 .container{
@@ -14,8 +44,15 @@ body{
     max-width: 90%;
     padding: 35px;
     border-radius: 18px;
-    background:rgba(255,255,255,0.95);
+    background:rgba(255, 255, 255, 0.95);
     box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    transition:.4s;
+    position:relative;
+    z-index:1;
+}
+
+.container:hover{
+    transform:translateY(-4px);
 }
 
 h1{
@@ -36,23 +73,30 @@ label{
 select{
     width: 100%;
     padding: 12px;
-    margin-bottom: 18px;
     border: 2px solid #ddd;
-    border-radius: 10px;
     box-sizing: border-box;
     transition: .3s;
     font-size: 15px;
+    border:none;
+    outline:none;
+    background:transparent;
+}
 
+select:hover{
+    border-color:#7f5af0;
 }
 
 .gender{
     margin-bottom: 18px;
+    display:flex;
+    justify-content:space-between;
 }
 
 .gender label{
-    display: inline;
-    font-weight: normal;
-    margin-right: 15px;
+    background:#f3f3f3;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
 }
 
 input[type="submit"]{
@@ -66,11 +110,14 @@ input[type="submit"]{
     font-weight: bold;
     cursor: pointer;
     transition: .3s;
+    position:relative;
+    overflow:hidden;
 }
 
 input[type="submit"]:hover{
-    transform: translateY(-2px);
-    box-shadow:0 8px 18px rgba(0,0,0,.3);
+     transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    background:linear-gradient(to right,#7f5af0,#49a09d);
 }
 
 input:focus,
@@ -90,6 +137,7 @@ select:focus{
     border:2px solid #ddd;
     border-radius:10px;
     padding:0 15px;
+    transition:.3s;
     margin-bottom:18px;
 }
 
@@ -99,10 +147,46 @@ select:focus{
     font-size:16px;
 }
 
+.input-box:hover{
+    border-color:#7f5af0;
+}
+
+.input-box:focus-within{
+    border-color:#7f5af0;
+    box-shadow:0 0 15px rgba(127,90,240,.3);
+}
+
 .input-box input{
     border:none;
     outline:none;
     width:100%;
     height:50px;
     font-size:16px;
+}
+
+.top-icon{
+    width:65px;
+    height:65px;
+    background:linear-gradient(135deg,#5f2c82,#7f5af0);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    margin:auto;
+    margin-bottom:15px;
+    font-size:28px;
+    box-shadow:0 8px 20px rgba(95,44,130,.35);
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-top:-15px;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.input-box input::placeholder{
+    color:#999;
 }
